@@ -6,7 +6,7 @@
 #    By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 19:19:45 by grenato-          #+#    #+#              #
-#    Updated: 2022/06/03 23:20:01 by grenato-         ###   ########.fr        #
+#    Updated: 2022/06/04 00:24:05 by grenato-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -48,7 +48,7 @@ OBJ_DIR = obj
 B_OBJ_DIR = obj_bonus
 
 SOURCE_FILES = main.c receive_data.c node.c push.c swap.c rotate.c
-SOURCE_FILES += reverse_rotate.c tree.c radix.c wheel_algorithm.c stack.c
+SOURCE_FILES += reverse_rotate.c tree.c wheel_algorithm.c stack.c
 SOURCE_FILES += instruction.c utils.c get_rotations.c sort_little.c
 
 C_SOURCE = $(addprefix $(SRC_DIR)/, $(SOURCE_FILES))

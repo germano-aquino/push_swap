@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:07:06 by grenato-          #+#    #+#             */
-/*   Updated: 2022/05/30 00:57:59 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/04 00:23:40 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,4 +82,5 @@ void	sort_little(t_stacks *stacks);
 void	rotate_to_push(t_stacks *stacks);
 void	copy_stack(t_stack *new, t_stack *old);
 void	free_stack(t_stack *stack);
+void	swap(int *x, int *y);
 #endif
