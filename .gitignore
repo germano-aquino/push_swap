@@ -1,0 +1,8 @@
+output.txt
+push_swap
+valgrind-out.txt
+push_swap_tester
+push_swap_visualizer
+log_error
+checker
+radix.c
