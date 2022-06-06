@@ -65,7 +65,7 @@ int	main(int argc, char *argv[])
 	ft_init(&stacks);
 	if (get_data(argc, argv, &stacks) == -1)
 		ft_exit(&stacks, 1);
-	if (stack_is_not_ordered(&stacks))
+	if (stack_is_not_sorted(&stacks))
 	{
 		if (stacks.a.size < 10)
 			sort_little(&stacks);

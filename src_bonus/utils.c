@@ -47,7 +47,7 @@ void	ft_free_2d_char_ptr(char ***ptr)
 	*ptr = NULL;
 }
 
-int	stack_is_not_ordered(t_stacks *stacks)
+int	stack_is_not_sorted(t_stacks *stacks)
 {
 	t_node	*iter;
 	size_t	i;

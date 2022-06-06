@@ -90,7 +90,7 @@ void	wheel_algorithm(t_stacks *stacks)
 	parse_halves(stacks);
 	if (stacks->a.head->index == 0)
 		rotate_stacks(stacks, RA);
-	while (stack_is_not_ordered(stacks))
+	while (stack_is_not_sorted(stacks))
 	{
 		if (stacks->b.head == NULL)
 		{

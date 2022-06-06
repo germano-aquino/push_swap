@@ -136,7 +136,8 @@ t_node	*add_node_in_stack_tail(t_stack *stack, int nb);
  * @brief Execute a push operation from a stack to another.
  * 
  * @param stacks Variable which contain the stacks A and B.
- * @param which_stack Flag which indicates if stack A or B will be pushed.
+ * @param which_stack Flag which indicates if stack A or B will be pushed
+ * (PA or PB).
  */
 void	push_stacks(t_stacks *stacks, int which_stack);
 
@@ -210,7 +211,7 @@ int		is_not_a_number(char *str);
  * 
  * @param stacks Variable which contain the stacks A and B.
  * @param which_stack Flag which indicates if stack A, B or both will
- * be reverse rotated.
+ * be reverse rotated (RRA, RRB or RRR).
  */
 void	reverse_rotate_stacks(t_stacks *stacks, int which_stack);
 
@@ -228,7 +229,7 @@ void	reverse_rotate(t_stack *stack);
  * 
  * @param stacks Variable which contain the stacks A and B.
  * @param which_stack Flag which indicates if stack A, B or both will
- * be rotated.
+ * be rotated (RA, RB or RR).
  */
 void	rotate_stacks(t_stacks *stacks, int which_stack);
 
@@ -263,19 +264,145 @@ void	sort_3(t_stacks *stacks);
  */
 void	sort_little(t_stacks *stacks);
 
-void	swap_stacks(t_stacks *stack, int which_stack);
+//FILE: stack.c
+
+/**
+ * @brief Check if stack B is not empty or stack A is not sorted in ascending order.
+ * 
+ * @param stacks Variable which contain the stacks A and B.
+ * @return Returns 1 if stacks are not sorted otherwise returns 0.
+ */
+int		stack_is_not_sorted(t_stacks *stacks);
+
+/**
+ * @brief Copy the old stack into the new malloced stack. 
+ * 
+ * @param new Target stack.
+ * @param old Source stack.
+ */
+void	copy_stack(t_stack *new, t_stack *old);
+
+/**
+ * @brief Free malloced attributes at stack.
+ * 
+ * @param stack 
+ */
+void	free_stack(t_stack *stack);
+
+//FILE: swap.c
+
+/**
+ * @brief Swap first and second elements of a stack.
+ * 
+ * @param stacks Variable which contain the stacks A and B.
+ * @param which_stack Flag which indicates if stack A, B or both will
+ * be swapped (SA, SB or SS).
+ */
+void	swap_stacks(t_stacks *stacks, int which_stack);
+
+//FILE: tree.c
+
+/**
+ * @brief Push a new node element in the tree sent as paramenter.
+ * 
+ * @param tree tree which will receive new node.
+ * @param node new node to be sent to tree.
+ * @return Returns tree's root.
+ */
 t_tree	*push_tree(t_tree *tree, t_node **node);
+
+/**
+ * @brief Create a new tree object with node as a parameter.
+ * 
+ * @param node
+ * @return Returns new tree element. 
+ */
+t_tree	*create_new_tree(t_node **node);
+
+/**
+ * @brief Set the node's index attributes with the value of *index, 
+ * after setted the tree element is freed.
+ * 
+ * @param tree Address of tree element to be setted.
+ * @param index New value of index attribute.
+ */
 void	set_nodes_index(t_tree **tree, int *index);
-void	radix_algorithm(t_stacks *stacks);
-void	mid_point_algorithm(t_stacks *stacks);
-void	wheel_algorithm(t_stacks *stacks);
-int		stack_is_not_ordered(t_stacks *stacks);
-int		max(int a, int b);
-int		min(int a, int b);
+
+//FILE: utils.c
+
+/**
+ * @brief Calculates the absolute value of integer a.
+ * 
+ * @param a Integer which will be calculated.
+ * @return Returns a if a is greater than 0 otherwise returns -a.
+ */
 int		mod(int a);
 
-void	rotate_to_push(t_stacks *stacks);
-void	copy_stack(t_stack *new, t_stack *old);
-void	free_stack(t_stack *stack);
+/**
+ * @brief Compares a and b absolute values and returns the maximum.
+ * 
+ * @param a 
+ * @param b 
+ * @return Returns the maximum absolute value between a and b.
+ */
+int		max(int a, int b);
+
+/**
+ * @brief Compares a and b absolute values and returns the minimum.
+ * 
+ * @param a 
+ * @param b 
+ * @return Returns the minimum absolute value between a and b.
+ */
+int		min(int a, int b);
+
+/**
+ * @brief Swap the content of two integer pointers.
+ * 
+ * @param x 
+ * @param y 
+ */
 void	swap(int *x, int *y);
+
+//FILE: wheel_algorithm.c
+
+/**
+ * @brief Algorithm which rotate both stacks in order to sort all elements
+ * in stack A in ascending order and keep the stack B empty.
+ * 
+ * @param stacks Variable which contain the stacks A and B.
+ */
+void	wheel_algorithm(t_stacks *stacks);
+
+/**
+ * @brief This function first split the elements of stack A in two halves,
+ * one half with the bigger elements and the other with the smaller. Secondly,
+ * all elements of the bigger half but the maximum are pushed to stack B. Finally,
+ * all elements of the smaller half but the minimum are pushed to stack B.
+ * 
+ * @param stacks Variable which contain the stacks A and B.
+ */
+void	parse_halves(t_stacks *stacks);
+
+/**
+ * @brief This function rotate both stacks is order to push an element to stack A
+ * and keep the stack A ascending sorted.
+ * 
+ * @param stacks Variable which contain the stacks A and B.
+ */
+void	rotate_to_push(t_stacks *stacks);
+
+/**
+ * @brief This function check if there is a node inside of a range which has 
+ * to make less rotations than the B stack head's node to push a element to A stack
+ * and keep A stack ascending sorted.
+ * 
+ * @param stacks Variable which contain the stacks A and B.
+ * @param min Instruction vairable which stores the minimum amout of rotations in both stacks.
+ * @param range Ranger of nodes to compare with B stack head's node.
+ * @param direction If direction is 1 compares the nodes in forward direction, if direction is
+ * -1 copmares the nodes in backwards direction.
+ */
+void	check_nodes_in_range(t_stacks *stacks, t_instruction *min, \
+	int range, int direction);
 #endif

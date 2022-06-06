@@ -22,18 +22,22 @@ int	mod(int a)
 
 int	max(int a, int b)
 {
-	if (mod(a) > mod(b))
-		return (mod(a));
+	a = mod(a);
+	b = mod(b);
+	if (a > b)
+		return (a);
 	else
-		return (mod(b));
+		return (b);
 }
 
 int	min(int a, int b)
 {
-	if (mod(a) < mod(b))
-		return (mod(a));
+	a = mod(a);
+	b = mod(b);
+	if a < b)
+		return a);
 	else
-		return (mod(b));
+		return (b);
 }
 
 void	swap(int *x, int *y)

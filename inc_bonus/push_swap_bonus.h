@@ -51,10 +51,9 @@ void	swap_stacks(t_stacks *stack, int which_stack);
 void	push_stacks(t_stacks *stacks, int which_stack);
 void	rotate_stacks(t_stacks *stacks, int which_stack);
 void	reverse_rotate_stacks(t_stacks *stacks, int which_stack);
-int		stack_is_not_ordered(t_stacks *stacks);
+int		stack_is_not_sorted(t_stacks *stacks);
 int		receive_push_swap_instructions(t_stacks *stacks);
 int		max(int a, int b);
 void	ft_free_2d_char_ptr(char ***ptr);
-int		stack_is_not_ordered(t_stacks *stacks);
 
 #endif
