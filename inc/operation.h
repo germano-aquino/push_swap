@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:31:36 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/06 13:46:31 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:09:24 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,7 +95,4 @@ void	rotate(t_stack *stack);
  * be swapped (SA, SB or SS).
  */
 void	swap_stacks(t_stacks *stacks, int which_stack);
-
-
-
 #endif

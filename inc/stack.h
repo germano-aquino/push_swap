@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 13:34:20 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/06 13:35:49 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:07:26 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,8 @@ t_node	*add_node_in_stack_tail(t_stack *stack, int nb);
 //FILE: stack.c
 
 /**
- * @brief Check if stack B is not empty or stack A is not sorted in ascending order.
+ * @brief Check if stack B is not empty or stack A is not sorted in 
+ * ascending order.
  * 
  * @param stacks Variable which contain the stacks A and B.
  * @return Returns 1 if stacks are not sorted otherwise returns 0.
