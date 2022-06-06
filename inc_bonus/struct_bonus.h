@@ -1,50 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   struct_bonus.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/27 23:04:41 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/06 20:02:29 by grenato-         ###   ########.fr       */
+/*   Created: 2022/06/06 19:15:53 by grenato-          #+#    #+#             */
+/*   Updated: 2022/06/06 19:16:50 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#ifndef STRUCT_BONUS_H
+# define STRUCT_BONUS_H
 
-int	mod(int a)
+typedef struct s_node
 {
-	if (a > 0)
-		return (a);
-	else
-		return (-1 * a);
-}
+	int				data;
+	struct s_node	*next;
+	struct s_node	*previous;
+}				t_node;
 
-int	max(int a, int b)
+typedef struct s_stack
 {
-	a = mod(a);
-	b = mod(b);
-	if (a > b)
-		return (a);
-	else
-		return (b);
-}
+	t_node	*head;
+	t_node	*tail;
+	int		size;
+}				t_stack;
 
-int	min(int a, int b)
+typedef struct s_stacks
 {
-	a = mod(a);
-	b = mod(b);
-	if (a < b)
-		return (a);
-	else
-		return (b);
-}
+	t_stack	a;
+	t_stack	b;
+}				t_stacks;
 
-void	swap(int *x, int *y)
+typedef struct s_instruction
 {
-	int	temp;
-
-	temp = *x;
-	*x = *y;
-	*y = temp;
-}
+	int	rot_a;
+	int	rot_b;
+	int	total;
+}				t_instruction;
+#endif

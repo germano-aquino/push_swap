@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   wheel_algorithm.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 22:02:35 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/03 00:43:20 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:06:09 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,8 @@ void	rotate_to_push(t_stacks *stacks)
 
 void	wheel_algorithm(t_stacks *stacks)
 {
-	parse_halves(stacks);
+	if (stacks->a.size > 3)
+		parse_halves(stacks);
 	if (stacks->a.head->index == 0)
 		rotate_stacks(stacks, RA);
 	while (stack_is_not_sorted(stacks))

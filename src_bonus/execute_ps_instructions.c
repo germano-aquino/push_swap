@@ -1,47 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   receive_ps_instructions.c                          :+:      :+:    :+:   */
+/*   execute_ps_instructions.c                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 21:15:30 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/02 22:30:07 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:43:39 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap_bonus.h>
 
-int	exec_if_valid_instruction(t_stacks *stacks, char *inst, int len)
+int	exec_if_valid_instruction(t_stacks *stacks, char *inst)
 {
-	if (!ft_strncmp(inst, "sa\n", max(len, 3)))
+	if (!ft_strncmp(inst, "sa\n", 4))
 		swap_stacks(stacks, SA);
-	else if (!ft_strncmp(inst, "sb\n", max(len, 3)))
+	else if (!ft_strncmp(inst, "sb\n", 4))
 		swap_stacks(stacks, SB);
-	else if (!ft_strncmp(inst, "ss\n", max(len, 3)))
+	else if (!ft_strncmp(inst, "ss\n", 4))
 		swap_stacks(stacks, SS);
-	else if (!ft_strncmp(inst, "pa\n", max(len, 3)))
+	else if (!ft_strncmp(inst, "pa\n", 4))
 		push_stacks(stacks, PA);
-	else if (!ft_strncmp(inst, "pb\n", max(len, 3)))
+	else if (!ft_strncmp(inst, "pb\n", 4))
 		push_stacks(stacks, PB);
-	else if (!ft_strncmp(inst, "ra\n", max(len, 3)))
+	else if (!ft_strncmp(inst, "ra\n", 4))
 		rotate_stacks(stacks, RA);
-	else if (!ft_strncmp(inst, "rb\n", max(len, 3)))
+	else if (!ft_strncmp(inst, "rb\n", 4))
 		rotate_stacks(stacks, RB);
-	else if (!ft_strncmp(inst, "rr\n", max(len, 3)))
+	else if (!ft_strncmp(inst, "rr\n", 4))
 		rotate_stacks(stacks, RR);
-	else if (!ft_strncmp(inst, "rra\n", max(len, 4)))
+	else if (!ft_strncmp(inst, "rra\n", 5))
 		reverse_rotate_stacks(stacks, RRA);
-	else if (!ft_strncmp(inst, "rrb\n", max(len, 4)))
+	else if (!ft_strncmp(inst, "rrb\n", 5))
 		reverse_rotate_stacks(stacks, RRB);
-	else if (!ft_strncmp(inst, "rrr\n", max(len, 4)))
+	else if (!ft_strncmp(inst, "rrr\n", 5))
 		reverse_rotate_stacks(stacks, RRR);
 	else
 		return (1);
 	return (0);
 }
 
-int	receive_push_swap_instructions(t_stacks *stacks)
+int	exec_push_swap_instructions(t_stacks *stacks)
 {
 	char	*line;
 
@@ -50,7 +50,7 @@ int	receive_push_swap_instructions(t_stacks *stacks)
 		line = get_next_line(0, 0);
 		if (line)
 		{
-			if (exec_if_valid_instruction(stacks, line, ft_strlen(line)))
+			if (exec_if_valid_instruction(stacks, line))
 			{
 				free(line);
 				line = get_next_line(0, 1);

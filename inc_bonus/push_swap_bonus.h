@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap_bonus.h                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:07:06 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/02 22:40:34 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 20:10:45 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,45 +15,64 @@
 
 # include "libft.h"
 # include "macro_bonus.h"
+# include "struct_bonus.h"
+# include "operation_bonus.h"
 
-typedef struct s_node
-{
-	int				data;
-	struct s_node	*next;
-	struct s_node	*previous;
-}				t_node;
+//FILE: node_bonus.c
 
-typedef struct s_stack
-{
-	t_node	*head;
-	t_node	*tail;
-	int		size;
-}				t_stack;
-
-typedef struct s_stacks
-{
-	t_stack	a;
-	t_stack	b;
-}				t_stacks;
-
-typedef struct s_instruction
-{
-	int	rot_a;
-	int	rot_b;
-	int	total;
-}				t_instruction;
-
-
+/**
+ * @brief Add a node as a new tail in stack.
+ * 
+ * @param stack Stack which will be added.
+ * @param nb Data node.
+ * @return Returns the new node created.
+ */
 void	add_node_in_stack_tail(t_stack *stack, int nb);
-void	display(t_stacks *stacks);
-int		get_stack_data(t_stacks *stacks, char *args);
-void	swap_stacks(t_stacks *stack, int which_stack);
-void	push_stacks(t_stacks *stacks, int which_stack);
-void	rotate_stacks(t_stacks *stacks, int which_stack);
-void	reverse_rotate_stacks(t_stacks *stacks, int which_stack);
-int		stack_is_not_sorted(t_stacks *stacks);
-int		receive_push_swap_instructions(t_stacks *stacks);
-int		max(int a, int b);
-void	ft_free_2d_char_ptr(char ***ptr);
 
+//FILE: execute_ps_instructions.c
+
+/**
+ * @brief This function receives the instructions from STDIN and then
+ * execute if it is a valid instruction.
+ * 
+ * @param stacks Variable which stores A and B stacks.
+ * @return Returns 1 if an error occurs otherwise returns 0.
+ */
+int		exec_push_swap_instructions(t_stacks *stacks);
+
+/**
+ * @brief Check if string inst is a valid push_swap instruction and then
+ * execute.
+ * 
+ * @param stacks Variable which stores A and B stacks.
+ * @param inst Possible instruction to be executed.
+ * @return Returns 1 if an error occurs otherwise returns 0.
+ */
+int		exec_if_valid_instruction(t_stacks *stacks, char *inst);
+
+//FILE: utils.c
+
+/**
+ * @brief Swap the content of two integer pointers.
+ * 
+ * @param x 
+ * @param y 
+ */
+void	swap(int *x, int *y);
+
+/**
+ * @brief Check if stack B is not empty or stack A is not sorted in 
+ * ascending order.
+ * 
+ * @param stacks Variable which contain the stacks A and B.
+ * @return Returns 1 if stacks are not sorted otherwise returns 0.
+ */
+int		stack_is_not_sorted(t_stacks *stacks);
+
+/**
+ * @brief This functions free a null ending 2 dimension char pointer.
+ * 
+ * @param ptr address of the 2 dimension char pointer.
+ */
+void	ft_free_2d_char_ptr(char ***ptr);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:07:09 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/02 22:33:55 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:42:24 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,8 @@ int	main(int argc, char *argv[])
 
 	ft_init(&stacks);
 	if (get_stack_data(&stacks, argv[1]) == -1)
+		ft_exit(&stacks, 1);
+	if (exec_push_swap_instructions(&stacks))
 		ft_exit(&stacks, 1);
 	if (stack_is_not_sorted(&stacks))
 		ft_printf("KO\n");

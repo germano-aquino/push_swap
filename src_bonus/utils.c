@@ -3,22 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:22:47 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/03 23:30:25 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:32:41 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap_bonus.h>
-
-int	max(int a, int b)
-{
-	if (a > b)
-		return (a);
-	else
-		return (b);
-}
 
 void	swap(int *x, int *y)
 {

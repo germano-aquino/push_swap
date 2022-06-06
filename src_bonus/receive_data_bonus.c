@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   receive_data_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:20:53 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/02 22:26:47 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 19:34:03 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,5 @@ int	get_stack_data(t_stacks *stacks, char *args)
 		add_node_in_stack_tail(&stacks->a, nb);
 	}
 	ft_free_2d_char_ptr(&numbers);
-	if (receive_push_swap_instructions(stacks))
-		return (-1);
 	return (1);
 }

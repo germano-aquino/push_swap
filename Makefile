@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+         #
+#    By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 19:19:45 by grenato-          #+#    #+#              #
-#    Updated: 2022/06/04 00:24:05 by grenato-         ###   ########.fr        #
+#    Updated: 2022/06/06 20:02:54 by grenato-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ C_SOURCE = $(addprefix $(SRC_DIR)/, $(SOURCE_FILES))
 
 BONUS_FILES = main.c receive_data_bonus.c node_bonus.c swap_bonus.c
 BONUS_FILES += push_bonus.c reverse_rotate_bonus.c rotate_bonus.c
-BONUS_FILES += receive_ps_instructions.c utils.c
+BONUS_FILES += execute_ps_instructions.c utils.c
 
 B_SOURCE = $(addprefix $(BONUS_DIR)/, $(BONUS_FILES))
 
