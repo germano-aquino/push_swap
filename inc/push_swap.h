@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:07:06 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/06 13:53:51 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 13:55:05 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include "operation.h"
 # include "stack.h"
 # include "sort_algorithm.h"
+# include "utils.h"
+# include "instruction.h"
 
 //FILE: receive_data.c
 
