@@ -3,23 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 00:31:45 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/02 21:33:19 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 00:10:58 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	ft_free_buff(char **ptr, t_buffer *buff)
+void	ft_free_buff(char *ptr, t_buffer *buff)
 {
-	if (*ptr != NULL)
+	if (ptr != NULL)
 	{
-		free(*ptr);
-		*ptr = NULL;
+		free(ptr);
+		ptr = NULL;
 	}
-	if (buff->begin != NULL)
+	if (buff != NULL && buff->begin != NULL)
 	{
 		free(buff->begin);
 		buff->begin = NULL;
@@ -111,7 +111,7 @@ char	*get_next_line(int fd, int free_buff)
 		line = ft_get_line(&buff, fd);
 	else
 		line = NULL;
-	if (line[0] == '\0' || free_buff)
-		ft_free_buff(&line, &buff);
+	if (free_buff || line[0] == '\0')
+		ft_free_buff(line, &buff);
 	return (line);
 }

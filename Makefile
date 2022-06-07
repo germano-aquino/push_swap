@@ -6,20 +6,20 @@
 #    By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 19:19:45 by grenato-          #+#    #+#              #
-#    Updated: 2022/06/06 20:02:54 by grenato-         ###   ########.fr        #
+#    Updated: 2022/06/06 23:37:54 by grenato-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # define the C compiler
-CC = clang
-#CC = gcc
+#CC = clang
+CC = gcc
 
 # define any compile-time flags
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -g -Wall -Wextra -Werror
 
 # library flags
-LDFLAGS = -L.
+LDFLAGS = -g -L.
 
 # name of the project
 NAME = push_swap

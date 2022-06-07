@@ -3,20 +3,20 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+         #
+#    By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 19:19:45 by grenato-          #+#    #+#              #
-#    Updated: 2022/04/20 21:09:40 by grenato-         ###   ########.fr        #
+#    Updated: 2022/06/06 23:48:05 by grenato-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # $(NAME), all, clean, fclean and re.
 # define the C compiler
-CC = clang
-#CC = gcc
+#CC = clang
+CC = gcc
 
 # define any compile-time flags
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -g
 
 # library flags
 LDFLAGS = -L.

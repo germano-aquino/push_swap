@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:07:06 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/06 20:10:45 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 23:22:52 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include "macro_bonus.h"
 # include "struct_bonus.h"
 # include "operation_bonus.h"
+# include "receive_data_bonus.h"
 
 //FILE: node_bonus.c
 

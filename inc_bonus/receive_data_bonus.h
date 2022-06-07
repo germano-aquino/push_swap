@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/06 20:08:56 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/06 20:10:57 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/06 23:31:32 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@
  * @param stacks Variable which contain the stacks A and B.
  * @return Returns -1 if a error occurs otherwise returns 1.
  */
-int	get_stack_data(t_stacks *stacks, char *args);
+int	get_stack_data(t_stacks *stacks, int argc, char *argv[]);
 
 /**
  * @brief Check if "nb" number is already parsed in stack.
