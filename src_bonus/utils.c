@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:22:47 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/06 19:32:41 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:24:52 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	ft_free_2d_char_ptr(char ***ptr)
 int	stack_is_not_sorted(t_stacks *stacks)
 {
 	t_node	*iter;
-	size_t	i;
+	int		i;
 
 	iter = stacks->a.head;
 	i = 0;

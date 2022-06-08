@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:20:53 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/07 00:26:38 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:24:30 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	is_not_a_number(char *str)
 
 int	out_int_range(char *str)
 {
-	int	has_signal;
+	size_t	has_signal;
 
 	has_signal = 0;
 	if (str[0] == '-' || str[0] == '+')

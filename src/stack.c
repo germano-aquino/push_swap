@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 23:14:25 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/03 23:16:24 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 22:24:02 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	stack_is_not_sorted(t_stacks *stacks)
 {
 	t_node	*iter;
-	size_t	i;
+	int		i;
 
 	iter = stacks->a.head;
 	i = 0;
