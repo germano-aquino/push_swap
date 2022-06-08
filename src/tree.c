@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   tree.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 23:11:36 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/03 23:15:35 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:27:43 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ t_tree	*push_tree(t_tree *tree, t_node **node)
 {
 	t_node	*tree_node;
 
-	tree_node = tree->node;
+	if (tree)
+		tree_node = tree->node;
 	if (tree == NULL)
 	{
 		tree = create_new_tree(node);
