@@ -6,18 +6,18 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 00:31:45 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/07 00:10:58 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:10:01 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-void	ft_free_buff(char *ptr, t_buffer *buff)
+void	ft_free_buff(char **ptr, t_buffer *buff)
 {
-	if (ptr != NULL)
+	if (*ptr != NULL)
 	{
-		free(ptr);
-		ptr = NULL;
+		free(*ptr);
+		*ptr = NULL;
 	}
 	if (buff != NULL && buff->begin != NULL)
 	{
@@ -112,6 +112,6 @@ char	*get_next_line(int fd, int free_buff)
 	else
 		line = NULL;
 	if (free_buff || line[0] == '\0')
-		ft_free_buff(line, &buff);
+		ft_free_buff(&line, &buff);
 	return (line);
 }

@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 22:22:47 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/07 22:24:52 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:11:05 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,15 @@ void	ft_free_2d_char_ptr(char ***ptr)
 	}
 	free(*ptr);
 	*ptr = NULL;
+}
+
+void	ft_free_char_ptr(char **str)
+{
+	if (*str != NULL)
+	{
+		free(*str);
+		*str = NULL;
+	}
 }
 
 int	stack_is_not_sorted(t_stacks *stacks)

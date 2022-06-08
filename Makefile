@@ -6,18 +6,18 @@
 #    By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 19:19:45 by grenato-          #+#    #+#              #
-#    Updated: 2022/06/07 21:32:56 by grenato-         ###   ########.fr        #
+#    Updated: 2022/06/07 22:32:51 by grenato-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # define the C compiler
-CC = clang
-#CC = gcc
+#CC = clang
+CC = gcc
 
 # define any compile-time flags
-CFLAGS = -Wall -Wextra -Werror
-#CFLAGS = -g -Wall -Wextra
+#CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -g -Wall -Wextra
 
 # library flags
 LDFLAGS = -g -L.

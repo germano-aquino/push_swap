@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/02 21:15:30 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/07 00:12:10 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:11:22 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,16 @@ int	exec_push_swap_instructions(t_stacks *stacks)
 		{
 			if (exec_if_valid_instruction(stacks, line))
 			{
-				free(line);
+				if (line != NULL)
+					ft_free_char_ptr(&line);
 				line = get_next_line(0, 1);
 				return (1);
 			}
 		}
 		else
 			break ;
-		free(line);
+		ft_free_char_ptr(&line);
 	}
-	free(line);
+	ft_free_char_ptr(&line);
 	return (0);
 }

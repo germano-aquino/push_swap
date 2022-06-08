@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:07:06 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/06 23:22:52 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/07 23:11:38 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,4 +76,11 @@ int		stack_is_not_sorted(t_stacks *stacks);
  * @param ptr address of the 2 dimension char pointer.
  */
 void	ft_free_2d_char_ptr(char ***ptr);
+
+/**
+ * @brief If *str is different from NULL *str is freed and null assigned.
+ * 
+ * @param str String address to be freed.
+ */
+void	ft_free_char_ptr(char **str);
 #endif
