@@ -6,17 +6,18 @@
 #    By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 19:19:45 by grenato-          #+#    #+#              #
-#    Updated: 2022/06/06 23:37:54 by grenato-         ###   ########.fr        #
+#    Updated: 2022/06/07 21:32:56 by grenato-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
 # define the C compiler
-#CC = clang
-CC = gcc
+CC = clang
+#CC = gcc
 
 # define any compile-time flags
-CFLAGS = -g -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
+#CFLAGS = -g -Wall -Wextra
 
 # library flags
 LDFLAGS = -g -L.
@@ -63,10 +64,10 @@ OBJ = $(C_SOURCE:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 B_OBJ = $(B_SOURCE:$(BONUS_DIR)/%.c=$(B_OBJ_DIR)/%.o)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-	$(CC) $(CLFLAGS) $(HEADERS) -O3 -c $< -o $@
+	$(CC) $(CFLAGS) $(HEADERS) -O3 -c $< -o $@
 
 $(B_OBJ_DIR)/%.o: $(BONUS_DIR)/%.c
-	$(CC) $(CLFLAGS) $(HEADERS) -O3 -c $< -o $@
+	$(CC) $(CFLAGS) $(HEADERS) -O3 -c $< -o $@
 
 all: $(NAME)
 
