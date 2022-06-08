@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/10 00:31:45 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/07 23:10:01 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/08 00:45:34 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,7 +103,9 @@ char	*get_next_line(int fd, int free_buff)
 		buff.end = buff.begin;
 		if (!buff.begin || !ft_read_from_fd(&buff, fd))
 		{
-			ft_free_buff(NULL, &buff);
+			free(buff.begin);
+			buff.begin = NULL;
+			buff.end = NULL;
 			return (NULL);
 		}
 	}
