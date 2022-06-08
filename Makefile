@@ -6,7 +6,7 @@
 #    By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/11/24 19:19:45 by grenato-          #+#    #+#              #
-#    Updated: 2022/06/07 22:32:51 by grenato-         ###   ########.fr        #
+#    Updated: 2022/06/08 18:58:13 by grenato-         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -83,7 +83,9 @@ $(OBJ_DIR):
 $(B_OBJ_DIR):
 	mkdir -p $(B_OBJ_DIR)
 
-bonus: $(B_OBJ_DIR) $(LIBFT) $(B_OBJ)
+bonus: $(B_NAME)
+
+$(B_NAME): $(B_OBJ_DIR) $(LIBFT) $(B_OBJ)
 	$(CC) $(CFLAGS) $(HEADERS) $(B_OBJ) -o $(B_NAME) $(LIBFT) $(LDFLAGS)
 
 clean:
