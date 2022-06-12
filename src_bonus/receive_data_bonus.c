@@ -6,7 +6,7 @@
 /*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:20:53 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/12 15:06:48 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:26:11 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,7 @@ int	get_stack_data(t_stacks *stacks, int argc, char *argv[])
 				ft_free_2d_char_ptr(&numbers);
 			return (-1);
 		}
+		add_node_in_stack_tail(&stacks->a, nb);
 	if (argc == 2)
 		ft_free_2d_char_ptr(&numbers);
 	return (1);
