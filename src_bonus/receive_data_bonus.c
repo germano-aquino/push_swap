@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   receive_data_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:20:53 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/07 22:24:30 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:06:48 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,14 +82,14 @@ int	get_stack_data(t_stacks *stacks, int argc, char *argv[])
 	else
 		numbers = &argv[1];
 	while (numbers[++i] != NULL)
-	{
-		if (is_not_a_number(numbers[i]) || out_int_range(numbers[i]))
-			return (-1);
 		nb = ft_atoi(numbers[i]);
-		if (check_number_is_in_stack(&stacks->a, nb))
+		if (is_not_a_number(numbers[i]) || out_int_range(numbers[i]) \
+		|| check_number_is_in_stack(&stacks->a, nb))
+		{
+			if (argc == 2)
+				ft_free_2d_char_ptr(&numbers);
 			return (-1);
-		add_node_in_stack_tail(&stacks->a, nb);
-	}
+		}
 	if (argc == 2)
 		ft_free_2d_char_ptr(&numbers);
 	return (1);

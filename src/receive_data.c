@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   receive_data.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: grenato- <grenato-@student.42sp.org.br>    +#+  +:+       +#+        */
+/*   By: grenato- <grenato-@student.42sp.org.br     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/12 22:20:53 by grenato-          #+#    #+#             */
-/*   Updated: 2022/06/07 22:22:47 by grenato-         ###   ########.fr       */
+/*   Updated: 2022/06/12 15:07:19 by grenato-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,11 +81,14 @@ int	get_data(int argc, char *argv[], t_stacks *stacks)
 	tree = NULL;
 	while (++i < argc)
 	{
-		if (is_not_a_number(argv[i]) || out_int_range(argv[i]))
-			return (-1);
 		nb = ft_atoi(argv[i]);
-		if (check_number_is_in_stack(&stacks->a, nb))
+		if (is_not_a_number(argv[i]) || out_int_range(argv[i]) \
+			|| check_number_is_in_stack(&stacks->a, nb))
+		{	
+			if (node && tree)
+				set_nodes_index(tree, &node);
 			return (-1);
+		}
 		node = add_node_in_stack_tail(&stacks->a, nb);
 		tree = push_tree(tree, &node);
 	}
